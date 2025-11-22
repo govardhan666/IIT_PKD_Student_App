@@ -1,0 +1,87 @@
+name: iitpkd_student_app
+description: A comprehensive student app for IIT Palakkad
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # HTTP & Networking
+  http: ^1.2.1
+  dio: ^5.4.0
+  html: ^0.15.4
+
+  # Local Storage
+  flutter_secure_storage: ^9.2.4
+  shared_preferences: ^2.5.3
+
+  # UI Components
+  cupertino_icons: ^1.0.6
+  iconsax_flutter: ^1.0.0
+  flutter_svg: ^2.0.10+1
+  lottie: ^3.3.1
+  carousel_slider: ^5.0.0
+  smooth_page_indicator: ^1.2.0
+
+  # Utilities
+  intl: ^0.20.0
+  timeago: ^3.7.0
+  fpdart: ^1.1.1
+  permission_handler: ^12.0.0+1
+  url_launcher: ^6.2.4
+  path_provider: ^2.1.2
+
+  # Network
+  internet_connection_checker_plus: ^2.7.2
+  connectivity_plus: ^6.1.0
+
+  # PDF
+  syncfusion_flutter_pdfviewer: ^28.1.33
+
+  # Service Locator
+  get_it: ^8.0.3
+
+  # Notifications
+  flutter_local_notifications: ^19.2.1
+  timezone: ^0.9.4
+
+  # Weather API
+  geolocator: ^13.0.1
+  geocoding: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  riverpod_generator: ^2.6.2
+  build_runner: ^2.4.15
+  riverpod_lint: ^2.6.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/data/
+    - 00_Slot_system.pdf
+    - MESS_MENU.pdf
+    - bus schedule.pdf
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
