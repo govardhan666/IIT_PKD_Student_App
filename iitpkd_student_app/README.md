@@ -2,6 +2,24 @@
 
 A comprehensive mobile application for IIT Palakkad students, providing easy access to academic resources, timetables, bus schedules, mess menus, and more.
 
+## 🚨 IMPORTANT: First Time Setup Required
+
+**Before building**, you must initialize the project to generate Android/iOS platform files:
+
+```bash
+cd iitpkd_student_app
+./initialize_project.sh
+```
+
+Then build the APK:
+
+```bash
+./build_apk.sh
+# Choose Option 1 for Release APK
+```
+
+📖 **For complete status and details**, see [PROJECT_STATUS.md](PROJECT_STATUS.md)
+
 ## 📱 Features
 
 ### 🏠 Home Page
@@ -92,28 +110,34 @@ A comprehensive mobile application for IIT Palakkad students, providing easy acc
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/IIT_PKD_Student.git
+   git clone https://github.com/govardhan666/IIT_PKD_Student.git
    cd IIT_PKD_Student/iitpkd_student_app
    ```
 
-2. **Install dependencies**
+2. **Initialize the project** (REQUIRED - generates Android/iOS files)
    ```bash
-   flutter pub get
+   ./initialize_project.sh
+   ```
+   This script will:
+   - Backup your code
+   - Run `flutter create` to generate platform files
+   - Restore all code and configuration
+   - Prepare the project for building
+
+3. **Build the APK** (Recommended)
+   ```bash
+   ./build_apk.sh
+   # Choose Option 1 for Release APK
    ```
 
-3. **Run the app**
+   The APK will be at: `build/app/outputs/flutter-apk/app-release.apk`
+
+4. **Alternative: Run directly** (for development)
    ```bash
    flutter run
    ```
 
-4. **Build for release**
-   ```bash
-   # Android
-   flutter build apk --release
-
-   # iOS
-   flutter build ios --release
-   ```
+📝 **Note**: The `android/` and `ios/` folders are initially empty. Step 2 is **required** to generate platform-specific files before building.
 
 ## 📁 Project Structure
 
