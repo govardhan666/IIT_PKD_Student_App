@@ -8,12 +8,19 @@ Don't panic! The app is correctly built. You just need to follow these steps:
 
 ## 📋 Step-by-Step Setup
 
-### **Option 1: Use the Run Script (Recommended)**
+### **Option 1: Use the Run Script (Recommended)** ⭐
 
 ```bash
 cd /home/user/IIT_PKD_Student/iitpkd_student_app
 ./run_app.sh
 ```
+
+This interactive script will give you options to:
+1. **Build APK (Release)** - For installation on devices
+2. **Build APK (Debug)** - For testing
+3. **Run on connected device** - Direct development mode
+4. **Build APK and Run** - Build + run in one step
+5. **Exit**
 
 ### **Option 2: Manual Setup**
 
@@ -27,9 +34,55 @@ flutter clean
 # 3. Install dependencies
 flutter pub get
 
-# 4. Run the app
+# 4. Build APK (choose one)
+flutter build apk --release    # For production
+flutter build apk --debug      # For testing
+
+# OR run directly on device
 flutter run
 ```
+
+---
+
+## 📱 Building the APK
+
+### **Release APK (Recommended for Installation)**
+
+```bash
+cd /home/user/IIT_PKD_Student/iitpkd_student_app
+flutter build apk --release
+```
+
+**Output:** `build/app/outputs/flutter-apk/app-release.apk`
+
+- Optimized and minified
+- Smaller file size
+- Production ready
+- Install on any Android device
+
+### **Debug APK (For Testing)**
+
+```bash
+flutter build apk --debug
+```
+
+**Output:** `build/app/outputs/flutter-apk/app-debug.apk`
+
+- Includes debugging symbols
+- Larger file size
+- Easier to debug
+
+### **Installing the APK**
+
+1. **Transfer to your phone:**
+   - USB cable
+   - Email
+   - Cloud storage
+   - ADB: `adb install build/app/outputs/flutter-apk/app-release.apk`
+
+2. **Enable "Install from Unknown Sources"** in your phone settings
+
+3. **Tap the APK file** and install
 
 ---
 
@@ -57,6 +110,13 @@ If you're still seeing the counter demo after following the steps above, try:
    flutter run --release
    ```
 
+5. **Use the APK instead**
+   ```bash
+   ./run_app.sh
+   # Choose option 1 to build APK
+   # Then install the APK on your device
+   ```
+
 ---
 
 ## ✅ Verify It's Working
@@ -65,16 +125,18 @@ Once the app launches correctly, you should see:
 
 1. **Splash Screen**
    - IIT Palakkad logo (school icon)
-   - "IIT Palakkad" title
+   - "IIT Palakkad" title in blue
    - "Student Portal" subtitle
    - Loading indicator
 
 2. **Login Page** (after 2 seconds)
-   - Purple app bar
-   - "IIT Palakkad Student Portal" title
-   - Username and Password fields
+   - Clean white/dark background
+   - "IIT Palakkad" title
+   - "Student Portal" subtitle
+   - Username/Roll Number field
+   - Password field
    - Login button
-   - Help button
+   - "Need help?" button
 
 **NOT** the Flutter counter demo with "Flutter Demo Home Page"!
 
@@ -92,7 +154,7 @@ Once logged in, you'll see 5 bottom navigation tabs:
 
 ---
 
-## 🐛 Common Issues
+## 🐛 Common Issues & Solutions
 
 ### **Issue: Dependencies not installing**
 ```bash
@@ -111,6 +173,25 @@ flutter run
 - Check Flutter version: `flutter --version`
 - Check device connection: `flutter devices`
 - Update Flutter: `flutter upgrade`
+
+### **Issue: APK build fails**
+```bash
+# Make sure Android SDK is installed
+flutter doctor
+
+# Accept Android licenses
+flutter doctor --android-licenses
+
+# Try building again
+flutter clean
+flutter pub get
+flutter build apk --release
+```
+
+### **Issue: "App not installed" when installing APK**
+- Uninstall any previous version first
+- Enable "Install from Unknown Sources"
+- Check if APK is corrupted (re-download/rebuild)
 
 ---
 
@@ -135,16 +216,20 @@ flutter run
 ## 🎯 Expected vs Wrong
 
 ### ✅ CORRECT (IIT Palakkad App)
+- App icon: School building icon
 - App bar says: "IIT Palakkad"
-- Has login page
+- Has login page with username/password
 - Material 3 design with blue/orange colors
-- Bottom nav with 5 tabs
+- Bottom nav with 5 tabs (Home, Timetable, Bus, Mess, Account)
+- Splash screen with loading
 
 ### ❌ WRONG (Flutter Demo)
 - App bar says: "Flutter Demo Home Page"
-- Has counter and + button
-- Material 2 design with purple
+- Has counter with + button
+- "You have pushed the button this many times: X"
+- Material 2 design with purple theme
 - No bottom navigation
+- No login page
 
 ---
 
@@ -155,15 +240,71 @@ flutter run
    cd /home/user/IIT_PKD_Student/iitpkd_student_app
    ```
 
-2. **Use hot reload during development**
+2. **Use the interactive script for convenience**
+   ```bash
+   ./run_app.sh
+   ```
+
+3. **Build APK for easy distribution**
+   - Share the APK file with other students
+   - No need for Flutter on their devices
+   - Just install and use!
+
+4. **Use hot reload during development**
    - Press `r` in terminal for hot reload
    - Press `R` for hot restart
    - Press `q` to quit
 
-3. **Check logs if something's wrong**
+5. **Check logs if something's wrong**
    ```bash
    flutter logs
    ```
+
+---
+
+## 🚀 Quick Commands Reference
+
+```bash
+# Setup and run (interactive)
+./run_app.sh
+
+# Build release APK
+flutter build apk --release
+
+# Build debug APK
+flutter build apk --debug
+
+# Run on device
+flutter run
+
+# Run in release mode
+flutter run --release
+
+# Clean and rebuild
+flutter clean && flutter pub get && flutter run
+
+# Check connected devices
+flutter devices
+
+# View logs
+flutter logs
+
+# Check Flutter setup
+flutter doctor
+```
+
+---
+
+## 📦 APK Locations
+
+After building, find your APK here:
+
+- **Release APK:** `build/app/outputs/flutter-apk/app-release.apk`
+- **Debug APK:** `build/app/outputs/flutter-apk/app-debug.apk`
+
+**File Size:**
+- Release: ~20-30 MB (optimized)
+- Debug: ~40-50 MB (with debug symbols)
 
 ---
 
