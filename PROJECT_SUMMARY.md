@@ -460,6 +460,5 @@ The app is now committed and pushed to the repository, ready for testing and dep
 ---
 
 **Repository**: https://github.com/govardhan666/IIT_PKD_Student
-**Branch**: `claude/iit-palakkad-student-app-015PbxurVeCXydyN6eMHmN3Q`
 
 **Created with ❤️ for IIT Palakkad Students**
