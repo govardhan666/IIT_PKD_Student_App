@@ -13,7 +13,7 @@ class AppTheme {
       brightness: Brightness.light,
       dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
     ),
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins', // Uncomment after adding Poppins fonts to assets
     appBarTheme: const AppBarTheme(
       centerTitle: false,
       elevation: 0,
@@ -40,7 +40,7 @@ class AppTheme {
       brightness: Brightness.dark,
       dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
     ),
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins', // Uncomment after adding Poppins fonts to assets
     appBarTheme: const AppBarTheme(
       centerTitle: false,
       elevation: 0,
